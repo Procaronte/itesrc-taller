@@ -1,0 +1,10 @@
+
+*.dll
+.vs/
+Models/bin/
+Models/obj/
+Services/bin/
+Services/obj/
+UserAPI/bin/
+UserAPI/obj/
+*.user
