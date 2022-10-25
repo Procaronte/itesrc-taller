@@ -31,7 +31,7 @@ namespace Services.Implementations
             return user;
         }
 
-        public async Task<bool> AddUser(CreateOrUpdateUserRequest user)
+        public async Task<User> AddUser(CreateOrUpdateUserRequest user)
         {
             User model = new User()
             {
@@ -42,10 +42,17 @@ namespace Services.Implementations
             };
             await _dbContext.AddAsync(model);
             int result = await _dbContext.SaveChangesAsync();
-            return result != -1;
+            if(result != -1)
+            {
+                return model;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public async Task<bool> UpdateUser(Guid id, CreateOrUpdateUserRequest user)
+        public async Task<User> UpdateUser(Guid id, CreateOrUpdateUserRequest user)
         {
             var model = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
             if (model != null)
@@ -54,9 +61,12 @@ namespace Services.Implementations
                 model.LastName = user.LastName;
                 model.Age = user.Age;
                 int result = await _dbContext.SaveChangesAsync();
-                return result != -1;
+                if (result != -1)
+                {
+                    return model;
+                }
             }
-            return false;
+            return null;
         }
     }
 }

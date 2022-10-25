@@ -12,7 +12,7 @@ namespace Services.Interfaces
     {
         Task<List<User>> GetAllUsers();
         Task<User> GetUserById(Guid id);
-        Task<bool> AddUser(CreateOrUpdateUserRequest user);
-        Task<bool> UpdateUser(Guid id, CreateOrUpdateUserRequest user);
+        Task<User> AddUser(CreateOrUpdateUserRequest user);
+        Task<User> UpdateUser(Guid id, CreateOrUpdateUserRequest user);
     }
 }

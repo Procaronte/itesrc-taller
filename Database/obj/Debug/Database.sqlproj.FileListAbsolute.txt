@@ -1,0 +1,6 @@
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\bin\Debug\Database.dacpac
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\bin\Debug\Database.dll
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\bin\Debug\Database.pdb
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\obj\Debug\Database.sqlproj.AssemblyReference.cache
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\obj\Debug\Database.dll
+C:\Users\operador\Documents\GitHub\itesrc-taller\Database\obj\Debug\Database.pdb
