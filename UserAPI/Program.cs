@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Models.Db;
 using Services.Implementations;
 using Services.Interfaces;
+using UserAPI.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,10 @@ builder.Services.AddTransient<IUserService, UserService>();
 
 var connectionString = builder.Configuration.GetConnectionString("UserAPIDb");
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connectionString));
+
+AppInfo appInfo = new AppInfo();
+builder.Configuration.GetSection("AppInfo").Bind(appInfo);
+builder.Services.AddSingleton(appInfo);
 
 var app = builder.Build();
 
